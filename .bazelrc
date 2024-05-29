@@ -1,0 +1,15 @@
+build:linux_asan --copt=-DENABLE_SSE
+build:linux_asan --define cpu=amd64
+build:linux_asan --define cpu_arch=x86_64
+build:linux_asan --cxxopt=-std=c++17
+build:linux_asan --host_cxxopt=-std=c++17
+build:linux_asan --copt=-w
+build:linux_asan --linkopt=-lstdc++fs
+build:linux_asan --strip=never
+build:linux_asan --copt -fno-sanitize-recover=all
+build:linux_asan --copt -fsanitize=address
+build:linux_asan --copt -Og
+build:linux_asan --copt -g
+build:linux_asan --copt -fno-omit-frame-pointer
+build:linux_asan --linkopt -fsanitize=address
+build:linux_asan --linkopt -static-libasan
